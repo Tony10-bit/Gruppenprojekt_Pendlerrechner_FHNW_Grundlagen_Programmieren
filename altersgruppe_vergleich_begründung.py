@@ -11,7 +11,7 @@ ALTER_JUGEND_BIS = 24
 ALTER_ERWACHSENE_BIS = 64
 ALTER_MAX = 120
 
-# fragt das Alter ab, bis eine gueltige Zahl eingegeben wird
+# fragt das Alter ab, bis eine gültige Zahl eingegeben wird
 def frage_alter():
     while True:
         eingabe = input("Wie alt sind Sie? ").strip()
