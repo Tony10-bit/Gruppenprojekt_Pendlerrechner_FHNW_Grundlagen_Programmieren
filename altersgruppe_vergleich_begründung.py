@@ -39,3 +39,14 @@ def frage_halbtax():
             return False
         else:
             print("Bitte ja oder nein eingeben.")
+
+# ordnet das Alter einer Altersgruppe zu
+def bestimme_altersgruppe(alter):
+    if alter <= ALTER_KIND_BIS:
+        return "Kind"
+    elif alter <= ALTER_JUGEND_BIS:
+        return "Jugend"
+    elif alter <= ALTER_ERWACHSENE_BIS:
+        return "Erwachsene"
+    else:
+        return "Senior"
