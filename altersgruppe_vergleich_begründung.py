@@ -26,3 +26,16 @@ def frage_alter():
             print(f"Bitte ein Alter zwischen 0 und {ALTER_MAX} eingeben.")
         else:
             return alter
+
+# fragt, ob man schon ein Halbtax hat (True = ja, False = nein)
+def frage_halbtax():
+    while True:
+        antwort = input("Besitzen Sie bereits ein Halbtax? (ja/nein): ")
+        antwort = antwort.strip().lower()
+
+        if antwort == "ja":
+            return True
+        elif antwort == "nein":
+            return False
+        else:
+            print("Bitte ja oder nein eingeben.")
