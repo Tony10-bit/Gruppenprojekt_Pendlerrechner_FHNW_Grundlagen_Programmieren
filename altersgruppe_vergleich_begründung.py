@@ -50,3 +50,30 @@ def bestimme_altersgruppe(alter):
         return "Erwachsene"
     else:
         return "Senior"
+
+# US2: fragt Alter und Halbtax ab und gibt das Profil zurueck
+def erfasse_profil():
+    alter = frage_alter()
+    gruppe = bestimme_altersgruppe(alter)
+    hat_halbtax = frage_halbtax()
+
+    # wer schon ein Halbtax hat, muss es nicht nochmals bezahlen
+    if hat_halbtax:
+        halbtax_preis = 0
+    else:
+        halbtax_preis = PREISE[gruppe]["halbtax"]
+
+    preise = {
+        "halbtax": halbtax_preis,
+        "plus": PREISE[gruppe]["plus"],
+        "ga": PREISE[gruppe]["ga"],
+    }
+
+    print(f"\nAltersgruppe: {gruppe}")
+    if alter <= ALTER_GRATIS_BIS:
+        print("Hinweis: Kinder unter 6 Jahren reisen in Begleitung gratis.")
+    print(f"Preise (Stand {PREISSTAND}): Halbtax CHF {halbtax_preis}, "
+          f"GA CHF {preise['ga']}")
+
+    profil = {"alter": alter, "gruppe": gruppe, "preise": preise}
+    return profil
