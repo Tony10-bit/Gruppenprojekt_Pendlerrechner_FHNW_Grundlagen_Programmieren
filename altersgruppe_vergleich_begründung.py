@@ -79,3 +79,11 @@ def erfasse_profil():
     return profil
 
 # ---------- US6: Vergleich günstigste Option ---------- 
+
+def kosten_halbtax_plus(fahrtkosten, halbtax_preis, paket_preis, guthaben):
+    noch_zu_bezahlen = fahrtkosten * HALBTAX_FAKTOR
+    bezahlt = 0
+    anzahl_pakete = 0
+
+    while noch_zu_bezahlen > 0:
+        anzahl_pakete = anzahl_pakete + 1
