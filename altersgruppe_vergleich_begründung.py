@@ -2,7 +2,7 @@
 
 from preise import PREISE, PREISSTAND  
 
-# ---------------- US2: Altersgruppe eingeben ----------------
+# ---------- US2: Altersgruppe eingeben ---------- 
 
 # Altersgrenzen (bis und mit diesem Alter)
 ALTER_GRATIS_BIS = 5
@@ -77,3 +77,5 @@ def erfasse_profil():
 
     profil = {"alter": alter, "gruppe": gruppe, "preise": preise}
     return profil
+
+# ---------- US6: Vergleich günstigste Option ---------- 
