@@ -112,24 +112,24 @@ while True:
 
 
 # Alle erfassten Strecken anzeigen
-print("\nIhre erfassten Verbindungen:")
 
-Gesamtkosten = 0
+# print("\nIhre erfassten Verbindungen:")
 
-for Nummer, Strecke in enumerate(Strecken, 1):
-    print("\nRoute", Nummer)
-    print("Von:", Strecke[0])
-    print("Nach:", Strecke[1])
-    print("Häufigkeit:", Strecke[2], "pro", Strecke[3])
-    print("Monate:", Strecke[4])
-    print("Normalpreis: CHF", round(Strecke[5], 2))
-    print("Fahrtkosten: CHF", round(Strecke[6], 2))
+# Gesamtkosten = 0
 
-    Gesamtkosten = Gesamtkosten + Strecke[6]
+# for Nummer, Strecke in enumerate(Strecken, 1):
+#     print("\nRoute", Nummer)
+#     print("Von:", Strecke[0])
+#     print("Nach:", Strecke[1])
+#     print("Häufigkeit:", Strecke[2], "pro", Strecke[3])
+#     print("Monate:", Strecke[4])
+#     print("Normalpreis: CHF", round(Strecke[5], 2))
+#     print("Fahrtkosten: CHF", round(Strecke[6], 2))
+# 
+#     Gesamtkosten = Gesamtkosten + Strecke[6]
 
 # US4: Reisebudget addieren
-Gesamtkosten = Gesamtkosten + Reisebudget
+# Gesamtkosten = Gesamtkosten + Reisebudget
 
-print("\nZusätzliches Reisebudget: CHF", round(Reisebudget, 2))
-print("Gesamtkosten pro Jahr: CHF", round(Gesamtkosten, 2))
-
+# print("\nZusätzliches Reisebudget: CHF", round(Reisebudget, 2))
+# print("Gesamtkosten pro Jahr: CHF", round(Gesamtkosten, 2))
