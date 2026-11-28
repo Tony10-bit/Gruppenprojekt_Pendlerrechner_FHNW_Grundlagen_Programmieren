@@ -170,3 +170,5 @@ def zeige_hinweis_nachladen(optionen):
               f"ganze Jahr. Sie müssen {pakete - 1}x selbst ein neues "
               "Paket kaufen.")
         print("Das GA gilt dagegen das ganze Jahr ohne Nachladen.")
+
+# --------- US 7 Begründung der Empfehlung ------
