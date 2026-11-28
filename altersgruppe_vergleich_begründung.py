@@ -132,3 +132,31 @@ def berechne_optionen(fahrtkosten, preise):
 
     while noch_zu_bezahlen > 0:
         anzahl_pakete = anzahl_pakete + 1
+
+# US6: zeigt alle Optionen als Ranking und markiert die günstigste
+def zeige_vergleich(optionen, fahrtkosten):
+    beste_kosten = round(optionen[0][0], 2)
+
+    print("\nKostenvergleich pro Jahr")
+    print("-" * 70)
+
+    rang = 1
+    for kosten, name, pakete in optionen:
+        ersparnis = fahrtkosten - kosten
+        text = f"{rang}. {name:<20} CHF {kosten:>8.2f}"
+
+        if ersparnis >= 0:
+            text = text + f"  spart CHF {ersparnis:.2f}"
+        else:
+            text = text + f"  CHF {-ersparnis:.2f} teurer"
+
+        if pakete > 1:
+            text = text + f"  ({pakete} Pakete)"
+
+        if round(kosten, 2) == beste_kosten:
+            text = text + "  <- Beste Option"
+
+        print(text)
+        rang = rang + 1
+
+    print("-" * 70)
