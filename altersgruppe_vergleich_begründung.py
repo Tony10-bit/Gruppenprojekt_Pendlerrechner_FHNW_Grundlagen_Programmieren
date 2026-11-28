@@ -81,9 +81,9 @@ def erfasse_profil():
 # ---------- US6: Vergleich günstigste Option ---------- 
 
 # Kosten mit Halbtax PLUS, gerechnet mit ganzen Paketen:
-# - ist das Guthaben aufgebraucht, muss man selbst ein neues Paket kaufen
-# - nicht gebrauchtes eigenes Geld kommt zurueck, der Bonus verfaellt
-# gibt (kosten, anzahl_pakete) zurueck
+# Ist das Guthaben aufgebraucht, muss man selbst ein neues Paket kaufen
+# Nicht gebrauchtes eigenes Geld kommt zurueck, der Bonus verfaellt
+#Gibt (kosten, anzahl_pakete) zurueck
 def kosten_halbtax_plus(fahrtkosten, halbtax_preis, paket_preis, guthaben):
     noch_zu_bezahlen = fahrtkosten * HALBTAX_FAKTOR
     bezahlt = 0
