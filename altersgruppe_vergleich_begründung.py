@@ -160,3 +160,13 @@ def zeige_vergleich(optionen, fahrtkosten):
         rang = rang + 1
 
     print("-" * 70)
+
+# Hinweis, wenn die beste Option Halbtax PLUS ist und nachgeladen werden muss
+def zeige_hinweis_nachladen(optionen):
+    kosten, name, pakete = optionen[0]
+
+    if pakete > 1:
+        print(f"Hinweis: Bei {name} reicht ein Guthaben nicht für das "
+              f"ganze Jahr. Sie müssen {pakete - 1}x selbst ein neues "
+              "Paket kaufen.")
+        print("Das GA gilt dagegen das ganze Jahr ohne Nachladen.")
