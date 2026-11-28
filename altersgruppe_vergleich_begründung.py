@@ -81,9 +81,9 @@ def erfasse_profil():
 # ---------- US6: Vergleich günstigste Option ---------- 
 
 # Kosten mit Halbtax PLUS, gerechnet mit ganzen Paketen:
-# Ist das Guthaben aufgebraucht, muss man selbst ein neues Paket kaufen
-# Nicht gebrauchtes eigenes Geld kommt zurueck, der Bonus verfaellt
-#Gibt (kosten, anzahl_pakete) zurueck
+# ist das Guthaben aufgebraucht, muss man selbst ein neues Paket kaufen
+# nicht gebrauchtes eigenes Geld kommt zurück, der Bonus verfàllt
+# gibt (kosten, anzahl_pakete) zurueck
 def kosten_halbtax_plus(fahrtkosten, halbtax_preis, paket_preis, guthaben):
     noch_zu_bezahlen = fahrtkosten * HALBTAX_FAKTOR
     bezahlt = 0
@@ -128,46 +128,6 @@ def berechne_optionen(fahrtkosten, preise):
     # Tupel werden nach dem ersten Wert sortiert, also nach den Kosten
     optionen.sort()
     return optionen
-
-
-# US6: zeigt alle Optionen als Ranking und markiert die guenstigste
-def zeige_vergleich(optionen, fahrtkosten):
-    beste_kosten = round(optionen[0][0], 2)
-
-    print("\nKostenvergleich pro Jahr")
-    print("-" * 70)
-
-    rang = 1
-    for kosten, name, pakete in optionen:
-        ersparnis = fahrtkosten - kosten
-        text = f"{rang}. {name:<20} CHF {kosten:>8.2f}"
-
-        if ersparnis >= 0:
-            text = text + f"  spart CHF {ersparnis:.2f}"
-        else:
-            text = text + f"  CHF {-ersparnis:.2f} teurer"
-
-        if pakete > 1:
-            text = text + f"  ({pakete} Pakete)"
-
-        if round(kosten, 2) == beste_kosten:
-            text = text + "  <- Beste Option"
-
-        print(text)
-        rang = rang + 1
-
-    print("-" * 70)
-
-
-# Hinweis, wenn die beste Option Halbtax PLUS ist und nachgeladen werden muss
-def zeige_hinweis_nachladen(optionen):
-    kosten, name, pakete = optionen[0]
-
-    if pakete > 1:
-        print(f"Hinweis: Bei {name} reicht ein Guthaben nicht für das "
-              f"ganze Jahr. Sie müssen {pakete - 1}x selbst ein neues "
-              "Paket kaufen.")
-        print("Das GA gilt dagegen das ganze Jahr ohne Nachladen.")
 
 
     while noch_zu_bezahlen > 0:
